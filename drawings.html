@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY DRAWINGS!!</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        body {
+            background-color: #fffdfd;
+            background-image:
+                radial-gradient(#f9d5e8 1.5px, transparent 1.5px),
+                radial-gradient(#d7e9ff 1.5px, transparent 1.5px);
+            background-position: 0 0, 15px 15px;
+            background-size: 30px 30px;
+            color: #77658f;
+            font-family: "MV Boli", cursive;
+            margin: 25px;
+            text-align: left;
+        }
+
+        h1 {
+            color: #cf80b3;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: #a18acb;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #a18acb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #55a85a;
+        }
+
+        input {
+            font-family: inherit;
+            font-size: 16px;
+            padding: 7px;
+            border: 2px dashed #dcbbea;
+            background: white;
+            color: #77658f;
+            max-width: 90%;
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 16px;
+            padding: 6px 12px;
+            border: 2px dashed #dcbbea;
+            background: #fff2b8;
+            color: #77658f;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #55a85a;
+        }
+
+        .decoration {
+            color: #cf80b3;
+            margin: 12px 0;
+        }
+
+        .drawing {
+            margin: 25px 0 40px;
+        }
+
+        .drawing img {
+            display: block;
+            width: 350px;
+            max-width: 100%;
+            height: auto;
+            margin: 12px 0;
+        }
+
+        .date {
+            color: #a18acb;
+            font-size: 14px;
+        }
+
+        .caption {
+            color: #77658f;
+            font-size: 18px;
+        }
+
+        .search-area {
+            margin: 20px 0;
+        }
+
+        #searchMessage,
+        .password-message {
+            margin-top: 8px;
+        }
+
+        /* HIDE THE SECRET DRAWING BY DEFAULT */
+        #secretDrawing {
+            display: none !important;
+            margin-top: 20px;
+        }
+
+        /* ONLY SHOW IT AFTER THE CORRECT PASSWORD */
+        #secretDrawing.unlocked {
+            display: block !important;
+        }
+
+        #secretDrawing img {
+            display: block;
+            width: 350px;
+            max-width: 100%;
+            height: auto;
+            margin: 12px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>MY DRAWINGS!!</h1>
+
+    <p>hiiii!! :D</p>
+    <p>LOOK AT THE DRAWINGS I MADE!!</p>
+
+    <div class="decoration">* * * * *</div>
+
+    <!-- DRAWING SEARCH -->
+    <div class="search-area">
+        <p>looking for a drawing? :D</p>
+
+        <input
+            type="search"
+            id="drawingSearch"
+            placeholder="find a drawing!!"
+            aria-label="Search drawings"
+        >
+
+        <button type="button" id="searchButton">FIND IT!!</button>
+        <button type="button" id="clearButton">SHOW ALL</button>
+
+        <p id="searchMessage" aria-live="polite"></p>
+    </div>
+
+    <div class="decoration">~ * ~ * ~</div>
+
+    <!-- DRAWING 1 -->
+    <div class="drawing" id="drawing1"
+         data-search="drawing 1 30 december 3020 me and mom and dad family house">
+
+        <h2>DRAWING 1!!</h2>
+        <p class="date">30 december 3020</p>
+
+        <img src="drawing1.png"
+             alt="A child's drawing of a house and family holding hands">
+
+        <p class="caption">me and mom and dad</p>
+    </div>
+
+    <!-- DRAWING 2 -->
+    <div class="drawing" id="drawing2"
+         data-search="drawing 2 24 january 3021">
+
+        <h2>DRAWING 2!!</h2>
+        <p class="date">24 january 3021</p>
+
+        <img src="drawing2.png" alt="Drawing 2">
+
+        <p class="caption">my second drawing!! :D</p>
+    </div>
+
+    <!-- DRAWING 3 -->
+    <div class="drawing" id="drawing3"
+         data-search="drawing 3 21 february 3021">
+
+        <h2>DRAWING 3!!</h2>
+        <p class="date">21 february 3021</p>
+
+        <img src="drawing3.png" alt="Drawing 3">
+
+        <p class="caption">look what i made!!</p>
+    </div>
+
+    <!-- DRAWING 4: PASSWORD LOCK -->
+    <div class="drawing" id="drawing4"
+         data-search="drawing 4 17 april 3021 secret picture password hints">
+
+        <h2>DRAWING 4!!</h2>
+        <p class="date">17 april 3021</p>
+
+        <p>this drawing is special!!</p>
+        <p>u need a code to see it!! :D</p>
+
+        <div class="decoration">
+            * * * PASSWORD HINTS!! * * *
+        </div>
+
+        <p>the number of letters in my fav color</p>
+        <p>my favorite number</p>
+        <p>the number of letters in this sentence</p>
+
+        <form id="passwordForm">
+            <label for="password">what's the code? </label>
+
+            <input
+                type="password"
+                id="password"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">UNLOCK!!</button>
+        </form>
+
+        <p class="password-message" id="passwordMessage"
+           aria-live="polite"></p>
+
+        <div id="secretDrawing">
+            <p>YAYYYY U GOT IT!! :D</p>
+
+            <img src="drawing4.png"
+                 alt="Arryssa's fourth drawing">
+
+            <p class="caption">it felt wierdly good</p>
+        </div>
+    </div>
+
+    <div class="decoration">~ * ~ * ~</div>
+
+    <p>i hope u like them!! :D</p>
+
+    <p><a href="menu.html">go back to the menu!!</a></p>
+
+    <script>
+        // DRAWING SEARCH
+        const searchInput = document.getElementById("drawingSearch");
+        const searchButton = document.getElementById("searchButton");
+        const clearButton = document.getElementById("clearButton");
+        const searchMessage = document.getElementById("searchMessage");
+
+        const drawings = Array.from(
+            document.querySelectorAll(".drawing")
+        );
+
+        function searchDrawings() {
+            const query = searchInput.value.trim().toLowerCase();
+            let matches = 0;
+            let firstMatch = null;
+
+            drawings.forEach(function(drawing) {
+                const searchableText =
+                    (drawing.dataset.search + " " + drawing.innerText)
+                    .toLowerCase();
+
+                const found =
+                    query === "" || searchableText.includes(query);
+
+                drawing.style.display = found ? "block" : "none";
+
+                if (found) {
+                    matches++;
+
+                    if (!firstMatch) {
+                        firstMatch = drawing;
+                    }
+                }
+            });
+
+            if (query === "") {
+                searchMessage.textContent =
+                    "showing all drawings!! :D";
+            } else if (matches === 0) {
+                searchMessage.textContent =
+                    "couldn't find that drawing!! :(";
+            } else {
+                searchMessage.textContent =
+                    "found " + matches +
+                    (matches === 1 ? " drawing!!" : " drawings!!");
+
+                firstMatch.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        }
+
+        searchButton.addEventListener("click", searchDrawings);
+
+        searchInput.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                searchDrawings();
+            }
+        });
+
+        clearButton.addEventListener("click", function() {
+            searchInput.value = "";
+
+            drawings.forEach(function(drawing) {
+                drawing.style.display = "block";
+            });
+
+            searchMessage.textContent =
+                "showing all drawings!! :D";
+        });
+
+        // DRAWING 4 PASSWORD
+        const passwordForm =
+            document.getElementById("passwordForm");
+
+        const passwordInput =
+            document.getElementById("password");
+
+        const passwordMessage =
+            document.getElementById("passwordMessage");
+
+        const secretDrawing =
+            document.getElementById("secretDrawing");
+
+        // Make sure the drawing starts locked.
+        secretDrawing.classList.remove("unlocked");
+
+        passwordForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (passwordInput.value === "5332") {
+                secretDrawing.classList.add("unlocked");
+
+                passwordMessage.textContent = "";
+                passwordForm.style.display = "none";
+            } else {
+                passwordMessage.textContent =
+                    "nope!! try again :(";
+
+                passwordInput.value = "";
+                passwordInput.focus();
+            }
+        });
+    </script>
+
+</body>
+</html>
