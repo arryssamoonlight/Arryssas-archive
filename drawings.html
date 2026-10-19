@@ -9,25 +9,29 @@
 
     <style>
         body {
-            background-color: #fffdfd;
-            background-image:
-                radial-gradient(#f9d5e8 1.5px, transparent 1.5px),
-                radial-gradient(#d7e9ff 1.5px, transparent 1.5px);
-            background-position: 0 0, 15px 15px;
-            background-size: 30px 30px;
-            color: #77658f;
+            background: linear-gradient(
+                145deg,
+                #fffafd 0%,
+                #fceaf4 45%,
+                #d7e9ff 100%
+            );
+            color: #9370DB;
             font-family: "MV Boli", cursive;
             margin: 25px;
             text-align: left;
         }
 
+        /* ALL TEXT PURPLE */
+        body,
+        body * {
+            color: #9370DB !important;
+        }
+
         h1 {
-            color: #cf80b3;
             font-size: 32px;
         }
 
         h2 {
-            color: #a18acb;
             font-size: 22px;
             margin-bottom: 5px;
         }
@@ -37,12 +41,7 @@
         }
 
         a {
-            color: #a18acb;
             text-decoration: none;
-        }
-
-        a:hover {
-            color: #55a85a;
         }
 
         input {
@@ -51,7 +50,6 @@
             padding: 7px;
             border: 2px dashed #dcbbea;
             background: white;
-            color: #77658f;
             max-width: 90%;
         }
 
@@ -61,16 +59,10 @@
             padding: 6px 12px;
             border: 2px dashed #dcbbea;
             background: #fff2b8;
-            color: #77658f;
             cursor: pointer;
         }
 
-        button:hover {
-            color: #55a85a;
-        }
-
         .decoration {
-            color: #cf80b3;
             margin: 12px 0;
         }
 
@@ -87,12 +79,10 @@
         }
 
         .date {
-            color: #a18acb;
             font-size: 14px;
         }
 
         .caption {
-            color: #77658f;
             font-size: 18px;
         }
 

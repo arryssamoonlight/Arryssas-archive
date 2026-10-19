@@ -10,44 +10,46 @@
 
     <style>
         body {
-            background-color: #fffdfd;
-            color: #77658f;
-            font-family: "MV Boli", sans-serif;
+            background: linear-gradient(
+                145deg,
+                #fffafd 0%,
+                #fceaf4 45%,
+                #d7e9ff 100%
+            );
+            color: #9370DB;
+            font-family: "MV Boli", cursive;
             text-align: left;
             padding: 30px 15px;
-            background-image:
-                radial-gradient(#f9d5e8 2px, transparent 2px),
-                radial-gradient(#d7e9ff 2px, transparent 2px);
-            background-position: 0 0, 20px 20px;
-            background-size: 40px 40px;
+        }
+
+        /* MAKE ALL TEXT PURPLE */
+        body,
+        body * {
+            color: #9370DB !important;
         }
 
         h1 {
-            color: #cf80b3;
+            font-size: 32px;
         }
 
         .menu-link {
             display: block;
             width: fit-content;
             margin: 2px 0;
-            color: #805a91;
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         .menu-link:hover {
-            color: #55a85a;
             text-decoration: underline;
         }
 
         .back-link {
-            color: #805a91;
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         .back-link:hover {
-            color: #55a85a;
             text-decoration: underline;
         }
     </style>
@@ -62,7 +64,5 @@
     <a class="menu-link" href="drawings.html">MY DRAWINGS!!</a>
     <a class="menu-link" href="diary.html">MY DIARY!!</a>
     <a class="menu-link" href="about.html">ABOUT THE CREATOR!!</a>
-
-  
 </body>
 </html>
